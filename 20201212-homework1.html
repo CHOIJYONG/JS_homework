@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제-주사위 게임</title>
+</head>
+<body>
+    <h2>과제 - 주사위 게임</h2>
+    <h2>랜덤한 숫자를 얻어 내가 입력한 숫자와 비교하는 게임</h2>
+
+    <script>
+        'use strict';
+
+        const mynum = prompt('1~6 까지의 숫자를 입력해 주세요')
+        let random = Math.random();       
+        
+        const dice = Math.floor(random * 6 + 1); 
+        
+        document.write(`<p>입력한 숫자 : ${mynum}</p>`);
+        document.write(`<p>주사위 숫자 : ${dice}</p>`);
+
+        if(mynum == dice) {
+            document.write(`<p>입력한 숫자와 주사위 숫자가 같습니다!`);
+        }else{
+            document.write(`<p>입력한 숫자와 주사위 숫자가 다릅니다!`);
+        }
+
+    </script>
+    
+</body>
+</html>
