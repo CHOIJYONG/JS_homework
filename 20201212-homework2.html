@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제2 - 가위바위보 게임</title>
+</head>
+<body>
+    <h2>과제 - 가위바위보 게임</h2>
+    <script>
+        'use strict';
+
+        let user = prompt('<가위> or <바위> or <보>를 입력하세요')
+        switch(user) {
+            case "가위" :
+                user = 1;
+                break;
+            case "바위" :
+                user = 2;
+                break;
+            case "보" :
+                user = 3;
+                break;
+            default:
+                alert("가위 or 바위 or 보 중 하나를 문자로 입력해 주세요")
+        }
+        
+                
+        let random = Math.random();
+        const com = Math.floor(random * 3 + 1);
+
+        if(user == 1) {
+            if(com == 1) {
+                document.write(`<p> USER:가위 / COM:가위 → USER : COM 비김!`);
+            }
+            if(com == 2) {
+                document.write(`<p> USER:가위 / COM:바위 → COM 승!`);
+            }
+            if(com == 3) {
+                document.write(`<p> USER:가위 / COM:보 → USER 승!`);
+            }
+        }
+
+        if(user == 2) {
+            if(com == 1) {
+                document.write(`<p> USER:바위 / COM:가위 → USER 승!`);
+            }
+            if(com == 2) {
+                document.write(`<p> USER:바위 / COM:바위 → USER : COM 비김!`);
+            }
+            if(com == 3) {
+                document.write(`<p> USER:바위 / COM:보 → COM 승!`);
+            }
+        }
+
+        if(user == 3) {
+            if(com == 1) {
+                document.write(`<p> USER:보 / COM:가위 → COM 승!`);
+            }
+            if(com == 2) {
+                document.write(`<p> USER:보 / COM:바위 → USER 승!`);
+            }
+            if(com == 3) {
+                document.write(`<p> USER:보 / COM:보 → USER : COM 비김!`);
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>
