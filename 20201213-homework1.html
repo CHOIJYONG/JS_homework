@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제-가위바위보 게임 2</title>
+</head>
+<body>
+    <h2>과제 - 가위바위보 게임 2</h2>
+    
+    <script>
+    'use strict'
+    
+    for(;;) {
+        let user = prompt('<가위> or <바위> or <보> 를 입력하세요');
+
+        let random = Math.random();
+        let com = Math.floor(random * 3 + 1);
+
+        switch(user) {
+        case "가위" :
+            user = 1;
+            break;
+        case "바위" :
+            user = 2;
+            break;
+        case "보" :
+            user = 3;
+            break;    
+        default :
+            alert('<가위> or <바위> or <보> 중 하나를 문자로 입력해 주세요');
+        }
+    
+
+        if(user == 1){
+            if(com == 1){
+                document.write('USER : 가위  COM : 가위 → 비김!! 다시~ ');
+                document.write(`<hr>`);
+            }
+            if(com == 2){
+                document.write('USER : 가위  COM : 바위 → USER 패!!  다시~ ');
+                document.write(`<hr>`);
+            }
+            if(com == 3){
+                document.write('USER : 가위  COM : 보→ USER 승!! 끝~  프로그램을 종료합니다');
+                document.write(`<hr>`);
+                break;
+            }
+        }
+
+        if(user == 2){
+            if(com == 1){
+                document.write('USER : 바위  COM : 가위 → USER 승!! 끝~  프로그램을 종료합니다.');
+                document.write(`<hr>`);
+                break;
+            }
+            if(com == 2){
+                document.write('USER : 바위  COM : 바위 → 비김!!  다시~ ');
+                document.write(`<hr>`);
+            }
+            if(com == 3){
+                document.write('USER : 바위  COM : 보 → USER 패!! 다시~ ');
+                document.write(`<hr>`);
+            }
+        }
+
+        if(user == 3){
+            if(com == 1){
+                document.write('USER : 보  COM : 가위 → USER 패!! 다시~ ');
+                document.write(`<hr>`);
+            }
+            if(com == 2){
+                document.write('USER : 보  COM : 바위 → USER 승!!  끝~  프로그램을 종료합니다');
+                document.write(`<hr>`);
+                break;
+            }
+            if(com == 3){
+                document.write('USER : 보  COM : 보 → 비김!! 다시~ ');
+                document.write(`<hr>`);
+            }
+        }
+    }
+
+    </script>
+
+</body>
+</html>
