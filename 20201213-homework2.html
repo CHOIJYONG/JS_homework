@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사칙연산 게임</title>
+</head>
+<body>
+    <h2>20201213 - 과제2 - 사칙연산 게임</h2>
+    <script>
+    
+    let score = Number();
+    
+    for(;;){
+        let random1 = Math.random();
+        let random2 = Math.random();
+        let random3 = Math.random();
+
+        let num1 = Math.floor(random1 * 9 + 1);
+        let arithmetics = Math.floor(random2 * 4 + 1);
+        let num2 = Math.floor(random3 * 9 + 1);
+
+        let math;
+        let result;
+
+        switch(arithmetics){
+            case 1:
+                result = Number(num1 + num2);
+                math = "+"
+                break;
+            case 2:
+                result = Number(num1 - num2);
+                math = "-"
+                break;
+            case 3:
+                result = Number(num1 * num2);
+                math = "*"
+                break;
+            case 4:
+                result = Number(parseInt(num1 / num2));
+                math = "/"
+                break;
+        }
+
+        let user = Number(prompt(`문제 : ${num1} ${math} ${num2} = ?
+
+(답을 숫자로 써주세요.)
+(나누기는 나머지 및 소수점을 제외해 주세요.)
+(10점이 되면 종료합니다.)`))
+
+        
+        if(Number(user) == result){
+            score += 1;
+            alert(`정답입니다!  /  score : ${score} 점`);
+                if (score == 10){
+                    alert('10점이 되었어요. 게임을 종료합니다.')
+                    break;
+                }
+        }else{
+            alert('틀렸습니다! 다시 풀어주세요');
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
